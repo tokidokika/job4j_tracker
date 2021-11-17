@@ -22,4 +22,13 @@ public class PointTest {
         double rsl = a.distance(b);
         Assert.assertEquals(expected, rsl, 0.01);
     }
+
+    @Test
+    public void when50to25then5() {
+        double expected = 7.0;
+        Point a = new Point(1, 6, 2);
+        Point c = new Point(3, 0, 5);
+        double rsl = c.distance3d(a);
+        Assert.assertEquals(expected, rsl, 0.1);
+    }
 }
