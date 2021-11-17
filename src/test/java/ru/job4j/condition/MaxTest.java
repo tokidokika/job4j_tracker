@@ -35,4 +35,15 @@ public class MaxTest {
         int expected = 17;
         Assert.assertEquals(result, expected);
     }
+
+    @Test
+    public void whenMax2To3To16to5Then16() {
+        int one = 2;
+        int two = 3;
+        int three = 16;
+        int four = 5;
+        int result = Max.max(one, two, three, four);
+        int expected = 16;
+        Assert.assertEquals(result, expected);
+    }
 }
