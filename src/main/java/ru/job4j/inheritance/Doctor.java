@@ -9,9 +9,6 @@ public class Doctor extends Profession {
         this.experience = experience;
     }
 
-    public Doctor() {
-    }
-
     public int getExperience() {
         return experience;
     }

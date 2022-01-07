@@ -10,9 +10,6 @@ public class Engineer extends Profession {
         this.professionArea = professionArea;
     }
 
-    public Engineer() {
-    }
-
     public String getProfessionArea() {
         return professionArea;
     }
