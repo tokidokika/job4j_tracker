@@ -28,7 +28,7 @@ public class Library {
         System.out.println("You shall not pass!");
         for (int index = 0; index < books.length; index++) {
             Book anotherBook = books[index];
-            if (anotherBook.getName().equals("Clean code")) {
+            if ("Clean code".equals(anotherBook.getName())) {
                 System.out.println("Ops, this is not Gandalf: " + books[index].getName() + ": "
                         + books[index].getNumbers() + " numbers");
             }
