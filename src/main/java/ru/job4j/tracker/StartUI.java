@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class StartUI {
@@ -40,6 +41,15 @@ public class StartUI {
                     System.out.println("Application changed successfully");
                 } else {
                     System.out.println("Application replacement error");
+                }
+            } else if (select == 3) {
+                System.out.println("=== Delete item ===");
+                System.out.print("=== Enter id ===");
+                int id = Integer.parseInt(scanner.nextLine());
+                if (tracker.delete(id)) {
+                    System.out.println("Application was deleted");
+                } else {
+                    System.out.println("Application deletion error");
                 }
             }
         }
