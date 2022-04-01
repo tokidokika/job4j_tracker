@@ -44,12 +44,22 @@ public class StartUI {
                 }
             } else if (select == 3) {
                 System.out.println("=== Delete item ===");
-                System.out.print("=== Enter id ===");
+                System.out.print("Enter id: ");
                 int id = Integer.parseInt(scanner.nextLine());
                 if (tracker.delete(id)) {
                     System.out.println("Application was deleted");
                 } else {
                     System.out.println("Application deletion error");
+                }
+            } else if (select == 4) {
+                System.out.println("=== Find item by id ===");
+                System.out.print("Enter id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                Item item = tracker.findById(id);
+                if (item != null) {
+                    System.out.println(item);
+                } else {
+                    System.out.println("Application with the entered id " + id + " was not found.");
                 }
             }
         }
