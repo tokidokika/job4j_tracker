@@ -64,16 +64,8 @@ public class AnalyzeByMap {
         LinkedHashMap<String, Integer> temp = new LinkedHashMap<>();
         List<Label> allScores = new ArrayList<>();
         for (Pupil el: pupils) {
-            Integer value;
             for (Subject sub: el.subjects()) {
-                String nameCourse = sub.name();
-                if (!temp.containsKey(nameCourse)) {
-                    temp.put(nameCourse, sub.score());
-                } else {
-                    value = temp.get(nameCourse);
-                    value += sub.score();
-                    temp.put(nameCourse, value);
-                }
+                temp.put(sub.name(), temp.getOrDefault(sub.name(), 0) + sub.score());
             }
         }
         for (Map.Entry<String, Integer> name : temp.entrySet()) {
