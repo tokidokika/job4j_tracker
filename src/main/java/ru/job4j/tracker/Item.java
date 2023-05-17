@@ -9,24 +9,6 @@ public class Item {
     private static final DateTimeFormatter FORMATTER
             = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
     private int id;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Item item = (Item) o;
-        return id == item.id && Objects.equals(name, item.name) && Objects.equals(created, item.created);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, created);
-    }
-
     private String name;
     private LocalDateTime created = LocalDateTime.now();
 
@@ -69,5 +51,22 @@ public class Item {
                 + ", name='" + name + '\''
                 + ", created=" + created.format(FORMATTER)
                 + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Item item = (Item) o;
+        return id == item.id && Objects.equals(name, item.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 }
