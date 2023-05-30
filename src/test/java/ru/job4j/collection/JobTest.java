@@ -75,8 +75,8 @@ public class JobTest {
     @Test
     public void whenComparatorByNameAndPriority() {
         Comparator<Job> compareNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
-        int result = compareNamePriority.compare(new Job("Refactor", 1),
-                new Job("Fix bugs", 3)
+        int result = compareNamePriority.compare(new Job("Refactor", 3),
+                new Job("Refactor", 1)
         );
         assertThat(result).isLessThan(0);
     }
